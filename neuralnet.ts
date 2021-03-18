@@ -130,9 +130,8 @@ export default class NeuralNet {
         node.inputs.forEach((inputEdge) => {
           sum += inputEdge.weight * inputEdge.fromNode.value;
         });
-        sum += node.bias;
 
-        node.value = node.activationFunction(sum);
+        node.value = node.activationFunction(sum) + node.bias;
       });
     }
 
